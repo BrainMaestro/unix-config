@@ -1,4 +1,5 @@
 dir=$(dirname $0)
 
-source $dir/git-aliases.sh
-source $dir/git-functions.sh
+for file in $dir/*.sh; do
+    source $file
+done
