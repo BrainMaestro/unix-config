@@ -1,2 +1,2 @@
 alias v=vim
-alias dsize='du -d1 -h'
+alias dsize='du -sch .[!.]* * | sort -h'
