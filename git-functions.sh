@@ -5,6 +5,12 @@ function gar() {
     git status --short
 }
 
+# Git add except matching
+function ganr() {
+    git status --short | awk '{print $2}' | grep -iv "$1" | xargs git add
+    git status --short
+}
+
 # Git Prune
 # Delete merged branches
 function gpr() {
