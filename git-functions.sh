@@ -22,7 +22,6 @@ function gpr() {
         return 1
     fi
 
-    git branch --merged "$branch"
     echo ==================================
     git branch --merged "$branch" | grep -iv "$branch\|master" | xargs git branch -d
     echo ==================================
