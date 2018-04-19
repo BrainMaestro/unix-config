@@ -19,5 +19,6 @@ for file in $(ls -A $config_dir); do
         fi
     fi
 
+    echo "linked $file"
     ln -s $config_file $file
 done
