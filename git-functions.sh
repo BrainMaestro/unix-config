@@ -16,14 +16,14 @@ function ganr() {
 function gpr() {
     branch=${1:-master}
     git branch | grep -iq "$branch"
-
+    
     if [[ $? -ne 0 ]]; then
         echo 'That branch does not exist.'
         return 1
     fi
 
-    echo ==================================
-    git branch --merged "$branch" | grep -iv "$branch\|master" | xargs git branch -d
-    echo ==================================
+    echo '=================================='
+    git branch --merged "$branch" | grep -iv "$branch\|master" | xargs git branch -d 2>/dev/null
+    echo '=================================='
     git branch --merged "$branch"
 }
