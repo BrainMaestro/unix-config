@@ -14,7 +14,8 @@ function ganr() {
 # Git Prune
 # Delete merged branches
 function gpr() {
-    branch=${1:-master}
+    current_branch=$(git symbolic-ref --short HEAD)
+    branch=${1:-$current_branch}
     git branch | grep -iq "$branch"
     
     if [[ $? -ne 0 ]]; then
